@@ -1,16 +1,3 @@
-**Original Request:**
-
-Hello everyone, 
-
-I'm currently trying to wrap my head around how to structure a ReactJS application. Here's the relevant information: 
-
-**Dev Environment**: npm, webpack, babel
-
-**Dependencies**: React, ReactDOM, React Router, React Router DOM
-
-**Code**: (Cleaned up a bit as to not reveal more sensitive information.)
-
-```
 /***********
 TABLE OF CONTENTS
 01.0.0 - Imports
@@ -175,20 +162,3 @@ ReactDOM.render((
     <App />
   </HashRouter>
 ), document.getElementById('container'));
-```
-
-`package.json` and `webpack.config.js` are all in the git repository, if needed.
-
-**Overall Goal**: I want to dynamically serve information to a main component and children components via a React Router route param and JSON object. Essentially, I want to be able to associate a param with an item in the object, so that the component can just refer to something like `arrayItem.itemProperty` and it can work dynamically. 
-
-I am trying to stay away from Redux as much as possible, since I'm already slightly overwhelmed by React now.
-
-**The Current Problem**:
-
-The array (on lines 26-55) is in the code, but anything outside of 1 component (`<MainMap />`, lines 113-138) can't access it.
-
-An example of one of these child Components would be `<MapHolder />`, which is on lines 142-156. (I get `ReferenceError: props is not defined` in those cases.)
-
-How would I make it so that `props.match.params.id` (or any other thing that would make this work) can be accessed to any of the children Components? 
-
-(*Note:* I'm well aware that the code isn't perfect. But this is still in early production stages, so I'd like to just resolve that one issue and hopefully the rest will clear up as a result of that.)
